@@ -72,11 +72,12 @@ class PasswordsController < ApplicationController
     
     url = "#{request.url}/" + @password.url_token
 
-    PasswordMailer.password_email(url, params[:password][:ticket_id])
 
     respond_to do |format|
       if @password.save
-        format.html { redirect_to @password, :notice => "The password has been pushed." }
+        PasswordMailer.password_email(url, params[:password][:ticket_id])
+        #format.html { redirect_to @password, :notice => "The password has been pushed." }
+        format.html 
         format.json { render :json => @password, :status => :created }
       else
         format.html { render :action => "new" }
