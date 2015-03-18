@@ -1,5 +1,5 @@
 class PasswordMailer < ActionMailer::Base
-  default from: "noreply@barebonesnetworking.com"
+  default from: "test06925@gmail.com"
 
   def password_email(url, ticket_id)
     @url = url
