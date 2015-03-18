@@ -58,8 +58,8 @@ class PasswordsController < ApplicationController
 
     @password = Password.new()
     
-    @password.expire_after_days = params[:password][:expire_after_days]
-    @password.expire_after_views = params[:password][:expire_after_views]
+    @password.expire_after_days = params[:password][:expire_after_days].present? || EXPIRE_AFTER_DAYS_DEFAULT
+    @password.expire_after_views = params[:password][:expire_after_views].present? || EXPIRE_AFTER_VIEWS_DEFAULT
     
     @password.url_token = rand(36**16).to_s(36)
     @password.user_id = current_user.id if current_user
@@ -70,6 +70,10 @@ class PasswordsController < ApplicationController
 
     @password.validate!
     
+    url = "#{request.url}/" + @password.url_token
+
+    PasswordMailer.password_email(url, params[:password][:ticket_id])
+
     respond_to do |format|
       if @password.save
         format.html { redirect_to @password, :notice => "The password has been pushed." }
