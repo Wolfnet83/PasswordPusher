@@ -1,24 +1,19 @@
 base: &base
-  adapter: sqlite3
-  timeout: 5000
-
-development:
-  database: db/development.sqlite3
-  <<: *base
-
-test:
-  database: db/test.sqlite3
-  <<: *base
-
-private:
-  database: db/private.sqlite3
-  <<: *base
-
-production:
-  database: heroku_testpushpw
   host: 127.0.0.1
   adapter: postgresql
   encoding: unicode
   pool: 5
   username: testpushpw
   password: testpushpw
+
+development:
+  database: dev_testpushpw
+  <<: *base
+
+test:
+  database: test_testpushpw
+  <<: *base
+
+production:
+  database: heroku_testpushpw
+  <<: *base
