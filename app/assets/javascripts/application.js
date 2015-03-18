@@ -29,9 +29,10 @@ function showViewsValue(newValue)
 
 
 msg = "Enter the Password to be Shared"
+msg_ticket = "Enter the Connectwise ticket number" 
 function prepareTextField(e) {
   if (e) {
-    if (e.value == msg) {
+    if (e.value == msg || e.value == msg_ticket) {
       e.value = '';
     }
   }
@@ -39,8 +40,15 @@ function prepareTextField(e) {
 
 function revertTextField(e) {
   if (e)
-    if (e.value == '') {
-      e.value = msg;
+    if (e.id == 'password_payload'){
+      if (e.value == '') {
+        e.value = msg;
+      }}
+    else
+    {
+      if (e.value == '') {
+        e.value = msg_ticket;
+      }
     }
 }
 
