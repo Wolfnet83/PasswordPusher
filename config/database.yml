@@ -15,5 +15,10 @@ private:
   <<: *base
 
 production:
-  database: db/production.sqlite3
-  <<: *base
+  database: heroku_testpushpw
+  host: 127.0.0.1
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: testpushpw
+  password: testpushpw
