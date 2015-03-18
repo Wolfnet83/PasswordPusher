@@ -2,39 +2,47 @@
 = form_for @password do |f|
   %p
     %div.title
-      %span.title Password Pusher
+      %span.title Barebones Networking Secure Password Portal
       %br
-      %span.tagline Go Ahead.  Email Another Password.
+      %span.tagline 
+        The Barebones Networking Secure Password Portal is a secure way to communicate
+        passwords over the web to the Barebones help desk
+        %br
+        All passwords are encrypted prior to storage and are available to only those with
+        direct link. Once expired, encrypted passwords are unequivocally deleted from the
+        database.
   %p.payload
     = f.text_field(:payload, { :class => "password", :value => PAYLOAD_INITIAL_TEXT, :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
-  %p
-    Delete password after:
-    %p.slider_box
-      = range_field_tag("password_expire_after_days", EXPIRE_AFTER_DAYS_DEFAULT, {:name => "password[expire_after_days]", :class => "slider", :min => EXPIRE_AFTER_DAYS_MIN, :max => EXPIRE_AFTER_DAYS_MAX, :step => "1", :onchange => "showDaysValue(this.value)"})
-      %span#daysrange
-        == #{EXPIRE_AFTER_DAYS_DEFAULT} Days
-    %p.slider_box
-      = range_field_tag("password_expire_after_views", EXPIRE_AFTER_VIEWS_DEFAULT, {:name => "password[expire_after_views]", :class => "slider", :min => EXPIRE_AFTER_VIEWS_MIN, :max => EXPIRE_AFTER_VIEWS_MAX, :step => "1", :onchange => "showViewsValue(this.value)"})
-      %span#viewsrange
-        == #{EXPIRE_AFTER_VIEWS_DEFAULT} Views
-    %br
-      %span.note
-        (whichever comes first)
+  %p.payload
+    = f.text_field(:ticket_id, { :class => "password", :value => "Enter the Connectwise ticket number", :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
+  -#%p
+    -#Delete password after:
+    -#%p.slider_box
+      -#= range_field_tag("password_expire_after_days", EXPIRE_AFTER_DAYS_DEFAULT, {:name => "password[expire_after_days]", :class => "slider", :min => EXPIRE_AFTER_DAYS_MIN, :max => EXPIRE_AFTER_DAYS_MAX, :step => "1", :onchange => "showDaysValue(this.value)"})
+      -#%span#daysrange
+        -#== #{EXPIRE_AFTER_DAYS_DEFAULT} Days
+    -#%p.slider_box
+      -#= range_field_tag("password_expire_after_views", EXPIRE_AFTER_VIEWS_DEFAULT, {:name => "password[expire_after_views]", :class => "slider", :min => EXPIRE_AFTER_VIEWS_MIN, :max => EXPIRE_AFTER_VIEWS_MAX, :step => "1", :onchange => "showViewsValue(this.value)"})
+      -#%span#viewsrange
+        -#== #{EXPIRE_AFTER_VIEWS_DEFAULT} Views
+    -#%br
+      -#%span.note
+        -#(whichever comes first)
         
   %p
-    = f.submit(:value => "Push it!")
+    = f.submit(:value => "Send password!")
 
 
 %p.notes      
   %span.tip
     * Tip: Only enter the password into the box.  Other identifying information can compromise security.
-  %p
-    %span
-      #cookie-save.cookie-save
-        %a{ :onclick => "saveExpirations()", :href => "#" } Save 
-        these expiration settings as
-        %i default 
-        in a browser cookie.
+  -#%p
+    -#%span
+      -##cookie-save.cookie-save
+        -#%a{ :onclick => "saveExpirations()", :href => "#" } Save 
+        -#these expiration settings as
+        -#%i default 
+        -#in a browser cookie.
   %p
   %span.note
     All passwords are encrypted prior to storage and are available to only those with the direct link.
