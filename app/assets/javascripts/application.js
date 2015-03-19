@@ -29,7 +29,7 @@ function showViewsValue(newValue)
 
 
 msg = "Enter the Password to be Shared"
-msg_ticket = "Enter the Connectwise ticket number" 
+msg_ticket = "Enter the ticket number" 
 function prepareTextField(e) {
   if (e) {
     if (e.value == msg || e.value == msg_ticket) {

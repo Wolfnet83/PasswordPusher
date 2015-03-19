@@ -4,9 +4,9 @@
 body {
   margin: 0em 0em 3em 0em;
   text-align: center;
-  background: #000000 image-url('outlets.png') repeat;
-  font-family: 'Crete Round', serif;
-  color: #ddd;
+  /*background: #FFFFFF image-url('outlets.png') repeat;*/
+  /*font-family: 'Open Sans', bold;*/
+  /*color: #ddd;*/
 }
 
 a:link, a:visited, a:active {
@@ -31,6 +31,9 @@ color:  #00CC00;
 
 div.content {
   margin-top: 50px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .auth_providers_area {
@@ -59,4 +62,8 @@ div.content {
   text-align: left;
   width: 800px;
   margin: 50px auto 50px auto;
+}
+
+h1{
+  font-family: 'Lato', sans-serif;
 }

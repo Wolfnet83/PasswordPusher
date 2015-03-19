@@ -2,20 +2,19 @@
 = form_for @password do |f|
   %p
     %div.title
-      %h6
-        %span.title Barebones Networking Secure Password Portal
+      %span.title Secure Password Portal
+    %div.tagline
+      %span.tagline
+        The Barebones Networking Secure Password Portal is a secure way to communicate
+        passwords over the web to the Barebones help desk
         %br
-        %span.tagline 
-          The Barebones Networking Secure Password Portal is a secure way to communicate
-          passwords over the web to the Barebones help desk
-          %br
-          All passwords are encrypted prior to storage and are available to only those with
-          direct link. Once expired, encrypted passwords are unequivocally deleted from the
-          database.
+        All passwords are encrypted prior to storage and are available to only those with
+        direct link. Once expired, encrypted passwords are unequivocally deleted from the
+        database.
   %p.payload
     = f.text_field(:payload, { :class => "password", :value => PAYLOAD_INITIAL_TEXT, :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
   %p.payload
-    = f.text_field(:ticket_id, { :class => "password", :value => "Enter the Connectwise ticket number", :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
+    = f.text_field(:ticket_id, { :class => "password", :value => "Enter the ticket number", :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
   %p
     = f.submit(:value => "Send password!")
 
