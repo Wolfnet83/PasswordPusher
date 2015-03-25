@@ -1,0 +1,19 @@
+base: &base
+  host: 127.0.0.1
+  adapter: mysql2 
+  encoding: utf8
+  pool: 5
+  username: username
+  password: password
+
+development:
+  database: dev_barebones_pw_db
+  <<: *base
+
+test:
+  database: test_barebones_pw_db
+  <<: *base
+
+production:
+  database: production_barebones_pw_db
+  <<: *base
