@@ -10,6 +10,7 @@ group :development, :test do
   gem "byebug", :platforms => :ruby_20
   gem "nifty-generators"
   gem 'pry'
+  gem 'capistrano-rails', '~>1.1.1'
 end
 
 gem 'json'
