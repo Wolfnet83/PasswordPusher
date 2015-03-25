@@ -50,4 +50,22 @@ namespace :deploy do
     end
   end
 
+  desc 'Restart httpd'
+  task :httpd_restart do
+    on roles(:all) do
+      execute "sudo service httpd restart"
+    end
+  end
+
+  desc 'Create symlink'
+  task :symlink do
+    on roles(:all) do
+      execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+      #execute "ln -s #{shared_path}/system #{release_path}/public/system"
+    end
+  end
+
+  after :updated, 'deploy:symlink'
+  after :updated, 'deploy:httpd_restart'
+
 end
