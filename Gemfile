@@ -11,6 +11,8 @@ group :development, :test do
   gem "nifty-generators"
   gem 'pry'
   gem 'capistrano-rails', '~>1.1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
 end
 
 gem 'json'

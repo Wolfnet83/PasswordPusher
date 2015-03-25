@@ -11,6 +11,10 @@ set :branch, "dev"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deployer/password'
 
+#RBENV settings
+set :rbenv_type, :user
+set :rbenv_ruby, '2.1.5'
+
 # Default value for :scm is :git
 # set :scm, :git
 
