@@ -7,6 +7,9 @@
 # Ignore local Capistrano configs
 /config/deploy/local_cap_config.rb
 
+#Ignore database settings
+/config/database.yml
+
 # Ignore bundler config
 /.bundle
 
@@ -19,3 +22,6 @@
 
 #Ignore compiled assets
 /public/assets
+
+#Ignore Capistrano metrics
+/.capistrano

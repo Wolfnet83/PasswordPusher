@@ -39,9 +39,9 @@ gem "devise"
 gem "omniauth"
 gem 'omniauth-openid'
 gem 'omniauth-twitter'
+gem 'mysql2'
 
 group :production do
-  gem 'pg'
   #gem 'oboe-heroku'
 end
 
