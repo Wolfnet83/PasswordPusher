@@ -41,7 +41,7 @@ gem 'omniauth-twitter'
 
 group :production do
   gem 'pg'
-  gem 'oboe-heroku'
+  gem 'mysql2'
 end
 
 group :private do

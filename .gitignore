@@ -16,3 +16,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#Ignore assets
+/public/assets
+
+#Ignore capistrano metrics
+/.capistrano
