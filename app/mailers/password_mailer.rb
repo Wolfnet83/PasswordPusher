@@ -3,6 +3,6 @@ class PasswordMailer < ActionMailer::Base
 
   def password_email(url, ticket_id)
     @url = url
-    mail(to: "helpdesk@barebonesnetworking.com, rredulla@barebonesnetworking.com, andrey.volcov@gmail.com", subject: "Ticket ##{ticket_id}/").deliver
+    mail(to: "helpdesk@barebonesnetworking.com", subject: "Ticket ##{ticket_id}/").deliver
   end
 end
