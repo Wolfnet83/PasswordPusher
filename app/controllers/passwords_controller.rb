@@ -60,6 +60,7 @@ class PasswordsController < ApplicationController
     
     @password.expire_after_days = params[:password][:expire_after_days]
     @password.expire_after_views = params[:password][:expire_after_views]
+    @password.expire_after_views += 1
     
     @password.url_token = rand(36**16).to_s(36)
     @password.user_id = current_user.id if current_user
